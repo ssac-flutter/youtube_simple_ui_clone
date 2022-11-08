@@ -10,7 +10,6 @@ final AppBar appBar = AppBar(
     onTap: () {},
     child: Row(
       children: [
-        /* 1 */
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
@@ -19,8 +18,6 @@ final AppBar appBar = AppBar(
             fit: BoxFit.contain,
           ),
         ),
-
-        /* 2 */
         const Text('YouTube', style: TextStyle(fontWeight: FontWeight.bold))
       ],
     ),
