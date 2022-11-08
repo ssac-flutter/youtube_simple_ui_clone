@@ -30,7 +30,7 @@ class VideoPlayScreen extends StatelessWidget {
               const SizedBox(height: 32.0),
               VideoInfo(videoInfo: video.videoInfo),
               const SizedBox(height: 8.0),
-              const Divider(color: Colors.grey),
+              const Divider(color: Colors.grey, thickness: 1.0),
               const SizedBox(height: 8.0),
               UploaderBanner(
                 uploaderLogoSrc: video.uploaderLogoSrc,
