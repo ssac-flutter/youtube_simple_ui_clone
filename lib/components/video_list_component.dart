@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../data/video.dart';
+import '../screens/main_screen.dart';
 import '../screens/video_play_screen.dart';
-import 'uploader_banner.dart';
-import 'video_aspect_ratio.dart';
-import 'video_info.dart';
-import 'video_title.dart';
+import 'ui_component.dart';
 
-class VideoListComponent extends StatelessWidget {
+class VideoListComponent extends StatelessWidget with UiComponent {
   final Video video;
 
   const VideoListComponent({required this.video, Key? key}) : super(key: key);
@@ -23,10 +21,7 @@ class VideoListComponent extends StatelessWidget {
       child: Row(
         children: [
           /* 1 */
-          Expanded(
-            flex: 16,
-            child: VideoAspectRatio(videoSrc: video.videoSrc),
-          ),
+          Expanded(flex: 16, child: setVideo16To9(videoSrc: video.videoSrc)),
 
           /* 2 */
           const Spacer(),
@@ -35,29 +30,24 @@ class VideoListComponent extends StatelessWidget {
           Expanded(
             flex: 16,
             child: AspectRatio(
-              aspectRatio: 16 / 9,
+              aspectRatio: aspectRatio16To9,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /* 1 */
                   Expanded(
-                    child: VideoTitle(
+                    child: setVideoTitle(
                       videoTitle: video.videoTitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-
-                  /* 2 */
-                  UploaderBanner(
+                  setUploaderBanner(
                     uploaderLogoSrc: video.uploaderLogoSrc,
                     uploaderName: video.uploaderName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-
-                  /* 3 */
-                  VideoInfo(
+                  setVideoInfo(
                     videoInfo: video.videoInfo,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
