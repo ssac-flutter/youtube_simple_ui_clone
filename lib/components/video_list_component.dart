@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_simple_ui_clone/constant.dart';
 
 import '../data/video.dart';
-import '../screens/main_screen.dart';
 import '../screens/video_play_screen.dart';
 import 'ui_component.dart';
 

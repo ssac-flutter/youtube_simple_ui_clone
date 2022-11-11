@@ -1,0 +1,1 @@
+const double aspectRatio16To9 = 16 / 9;

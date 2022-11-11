@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
-
-import '../screens/main_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:youtube_simple_ui_clone/constant.dart';
 
 mixin UiComponent {
+  void setLandscapeOnly() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
+    );
+  }
+
+  void setOrientationAll() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight
+      ],
+    );
+  }
   Widget setVideo16To9({required String videoSrc}) {
     return AspectRatio(
       aspectRatio: aspectRatio16To9,
